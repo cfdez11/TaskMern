@@ -14,8 +14,8 @@ app.use( express.json({ extended: true}) );
 //habilitar cors para poder intercambiar datos entre front y backen
 app.use(cors());
 
-//Se le asigna a la variable PORT el puerto de la variable de entorno PORT, en caso de que no exista se le asigna 4000
-const PORT = process.env.PORT || 4000; 
+//Se le asigna a la variable port el puerto de la variable de entorno port, en caso de que no exista se le asigna 4000
+const port = process.env.port || 4000; 
 
 //Importar rutas
 app.use('/api/usuarios', require('./routes/usuarios'));
@@ -29,6 +29,6 @@ app.get('/', (req, res)=> {
 });
 
 //Arrancamos el servidor
-app.listen(PORT, ()=>{
-    console.log(`El servidor esta funcionando en el puerto ${PORT}`);
+app.listen(port, '0.0.0.0', ()=>{
+    console.log(`El servidor esta funcionando en el puerto ${port}`);
 })
